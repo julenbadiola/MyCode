@@ -1,0 +1,28 @@
+{
+  "manifest_version": 2,
+
+  "name": "Intercepter",
+  "description": "Desarrollado por Julen Badiola.",
+  "version": "1.4",
+
+  "browser_action": {
+      "default_icon": "icons/icon.png",
+      "default_popup": "src/popup.html"
+  },
+
+  "background": {
+    "scripts": ["src/background.js"]
+  },
+
+   "content_scripts": [ {
+    "matches": [ "http://*/*", "https://*/*" ],
+      "js": ["src/var.js", "src/content.js"]
+    }
+  ],
+
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "http://*/*", 
+    "https://*/*"]
+}
